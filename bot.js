@@ -71,11 +71,11 @@ client.on('friendsList', () => {
 		client.addFriend(steamID);
 		var Curr_date = new Date();
 		var TimeLeft = parseInt((date_of_auth - Curr_date) / (1000*60*60*24));
-		setTimeout(function() {
+		setTimeout(function(steamID) {
 			client.chatMessage(steamID, '/pre Hi! I\'m Edmund. I was made by ^pvblo \nhttps://steamcommunity.com/id/pablllooo');
-			setTimeout(function() {
+			setTimeout(function(steamID) {
 				client.chatMessage(steamID, '/pre Current mode: Waiting for Steam Guard trade-lock \nAt the moment, I\'m waiting for trade-lock to come off, since I\'m a new account. \nDays left: '+ TimeLeft);
-				setTimeout(function() {
+				setTimeout(function(steamID) {
 					client.chatMessage(steamID, '/pre If you need any help in the future, please write !help');
 				}, 3000);
 			}, 3000);
