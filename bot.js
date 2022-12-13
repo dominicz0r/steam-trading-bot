@@ -34,16 +34,16 @@ client.on('loggedOn', () => {
 
 client.on('friendRelationship', function(steamID, relationship) {
 	if (relationship == 2) {
-		console.log('Otrzymano nowe zaproszenie od: ' + steamid)
+		console.log('Otrzymano nowe zaproszenie od: ' + steamID)
 		client.addFriend(steamID);
 		var Curr_date = new Date();
 		var TimeLeft = parseInt((date_of_auth - Curr_date) / (1000*60*60*24));
 		setTimeout(function() {
-			client.chatMessage(steamid, '/pre Hi! I\'m Edmund. I was made by ^pvblo \nhttps://steamcommunity.com/id/pablllooo');
+			client.chatMessage(steamID, '/pre Hi! I\'m Edmund. I was made by ^pvblo \nhttps://steamcommunity.com/id/pablllooo');
 			setTimeout(function() {
-				client.chatMessage(steamid, '/pre Current mode: Waiting for Steam Guard trade-lock \nAt the moment, I\'m waiting for trade-lock to come off, since I\'m a new account. \nDays left: '+ TimeLeft);
+				client.chatMessage(steamID, '/pre Current mode: Waiting for Steam Guard trade-lock \nAt the moment, I\'m waiting for trade-lock to come off, since I\'m a new account. \nDays left: '+ TimeLeft);
 				setTimeout(function() {
-					client.chatMessage(steamid, '/pre If you need any help in the future, please write !help');
+					client.chatMessage(steamID, '/pre If you need any help in the future, please write !help');
 				}, 3000);
 			}, 3000);
 		}, 1000);
