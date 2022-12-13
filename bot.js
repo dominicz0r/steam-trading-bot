@@ -69,15 +69,15 @@ client.on('friendsList', () => {
 		if (relationship == SteamUser.EFriendRelationship.RequestRecipient) {
 			const new_friend = steamID;
 			console.log('Otrzymano nowe zaproszenie OFFLINE od: ' + steamID);
-			client.addFriend(steamID);
+			client.addFriend(new_friend);
 			var Curr_date = new Date();
 			var TimeLeft = parseInt((date_of_auth - Curr_date) / (1000*60*60*24));
 			setTimeout(function() {
-				client.chatMessage(steamID, '/pre Hi! I\'m Edmund. I was made by ^pvblo \nhttps://steamcommunity.com/id/pablllooo');
+				client.chatMessage(new_friend, '/pre Hi! I\'m Edmund. I was made by ^pvblo \nhttps://steamcommunity.com/id/pablllooo');
 				setTimeout(function() {
-					client.chatMessage(steamID, '/pre Current mode: Waiting for Steam Guard trade-lock \nAt the moment, I\'m waiting for trade-lock to come off, since I\'m a new account. \nDays left: '+ TimeLeft);
+					client.chatMessage(new_friend, '/pre Current mode: Waiting for Steam Guard trade-lock \nAt the moment, I\'m waiting for trade-lock to come off, since I\'m a new account. \nDays left: '+ TimeLeft);
 					setTimeout(function() {
-						client.chatMessage(steamID, '/pre If you need any help in the future, please write !help');
+						client.chatMessage(new_friend, '/pre If you need any help in the future, please write !help');
 					}, 3000);
 				}, 3000);
 			}, 1000);
