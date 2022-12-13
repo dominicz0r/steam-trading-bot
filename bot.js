@@ -82,7 +82,7 @@ client.on('friendsList', () => {
 				}, 3000);
 			}, 1000);
 		}
-	};
+	}
 });
 
 client.on('webSession', (sessionid, cookies) => {
